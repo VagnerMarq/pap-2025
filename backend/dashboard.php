@@ -1,11 +1,12 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['id_empresa'])) {
     header("Location: index.html");
     exit();
 }
 
-include __DIR__ . '/db_connection.php';
+include_once __DIR__ . 'conexao.php';
 
 // Buscar dados principais
 $id_empresa = $_SESSION['id_empresa'];

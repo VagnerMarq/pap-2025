@@ -1,9 +1,11 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['empresas'])) {
     header("Location: index.html");
     exit();
 }
+
 $empresas = $_SESSION['empresas'];
 ?>
 
