@@ -17,7 +17,7 @@
         <h2>Bem-vindo ao Sistema de Gestão de Inventário</h2>
 
         <!--<form id="loginForm" onsubmit="return validarLogin(event)" action="login.php" method="POST">-->
-        <form id="loginForm" action="./backend/login.php" method="POST">
+        <form id="loginForm" action="login.php" method="POST">
           <div class="input-group">
             <i class="fas fa-envelope"></i>
             <input
