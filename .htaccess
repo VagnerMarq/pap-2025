@@ -1,0 +1,16 @@
+# Definir index padrão
+DirectoryIndex index.php
+
+# Redirecionar todas as URLs para index.php (ex: para criar URLs mais limpas futuramente)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Se o arquivo ou diretório não existir, redirecionar para index.php
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)$ index.php [QSA,L]
+</IfModule>
+
+# Segurança: bloquear acesso direto a arquivos sensíveis
+<FilesMatch "\.(htaccess|env|sql|json|md|ini|log|
