@@ -25,7 +25,6 @@ Sistema desenvolvido como parte do Projeto de Aptidão Profissional (PAP) — um
   - HTML5
   - CSS3
   - JavaScript
-  - Tailwind CSS
 
 - **Backend:**
 
