@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $usuario = 'root';
-$senha = '';
+$senha = 'root';
 $banco = 'estoque';
 
 // Criar a conexão

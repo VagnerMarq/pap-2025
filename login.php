@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             if (password_verify($senha, $user['senha'])) {
                 $_SESSION['id_usuario'] = $user['id_usuario'];
                 
-                // Redireciona para o dashboard
                 header('Location: dashboard.php');
                 exit();
             } else {

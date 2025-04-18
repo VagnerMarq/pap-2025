@@ -48,7 +48,7 @@
 
           <div class="login-attempts" id="loginAttempts"></div>
 
-          <button type="submit" id="loginButton">
+          <button type="submit" name="submit" id="loginButton">
             <span>Entrar</span>
             <div class="loading" id="loading"></div>
           </button>
