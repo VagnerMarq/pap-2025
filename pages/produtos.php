@@ -324,7 +324,6 @@
         main.classList.toggle("sidebar-open");
       };
 
-      // Event listeners para menu
       document
         .querySelector(".profile-toggle")
         .addEventListener("click", toggleMenu);
@@ -336,15 +335,35 @@
       document.addEventListener("click", (e) => {
         const sidebar = document.querySelector(".sidebar");
         const profileToggle = document.querySelector(".profile-toggle");
+        const closeSidebar = document.querySelector(".close-sidebar");
 
         if (
           !sidebar.contains(e.target) &&
           !profileToggle.contains(e.target) &&
-          sidebar.classList.contains("show")
+          !closeSidebar.contains(e.target)
         ) {
-          toggleMenu();
+          sidebar.classList.remove("show");
+          document.querySelector("main").classList.remove("sidebar-open");
         }
       });
+
+      document
+        .querySelector(".close-sidebar")
+        .addEventListener("click", toggleMenu);
+
+      // Inicialização
+      document.addEventListener("DOMContentLoaded", () => {
+        renderizarTabela(produtos);
+        atualizarContadores(produtos);
+      });
+
+      function showModal(modalId) {
+        document.getElementById(modalId).style.display = "flex";
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+      }
 
       function verDetalhes(id) {
         const produto = produtos.find((p) => p.id === id);
