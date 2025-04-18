@@ -394,6 +394,8 @@
       </div>
     </header>
 
+    <?php require_once '../services/header.php' ?>
+
     <aside class="sidebar">
       <nav>
         <ul>

@@ -75,6 +75,8 @@
       </div>
     </header>
 
+    <?php require_once '../services/header.php' ?>
+
     <!-- Menu Lateral -->
     <aside class="sidebar">
       <div class="sidebar-header">

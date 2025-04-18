@@ -408,7 +408,6 @@
         justify-content: space-between;
         padding: 1rem;
         border-bottom: 1px solid #eee;
-        margin-bottom: 1rem;
       }
 
       .profile-info {
@@ -456,6 +455,8 @@
         </button>
       </div>
     </header>
+
+    <?php require_once '../services/header.php' ?>
 
     <aside class="sidebar">
       <div class="sidebar-header">

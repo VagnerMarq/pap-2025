@@ -28,7 +28,7 @@
       </button>
     </header>
 
-    <?php  ?>
+    <?php require_once '../services/header.php' ?>
 
     <!-- Menu Lateral -->
     <aside class="sidebar">

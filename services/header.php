@@ -13,7 +13,6 @@
 <div class="header-navigation">
   <nav class="menu-principal">
     <ul class="list">
-      <li><a href="dashboard.php">Dashboard</a></li>
       <li><a href="../pages/produtos.php">Produtos</a></li>
       <li><a href="../pages/categorias.php">Categorias</a></li>
       <li><a href="../pages/fornecedores.php">Fornecedores</a></li>
