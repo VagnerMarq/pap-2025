@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#0077b6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#00b4d8;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <g transform="translate(10, 20)">
+        <path d="M20,0 h140 a20,20 0 0 1 20,20 v20 a20,20 0 0 1 -20,20 h-140 a20,20 0 0 1 -20,-20 v-20 a20,20 0 0 1 20,-20 z" fill="url(#grad)"/>
+        <text x="45" y="42" font-family="Arial" font-size="28" font-weight="bold" fill="white">InvSys</text>
+        <path d="M25,20 h10 v20 h-10 z M40,15 h10 v25 h-10 z M55,25 h10 v15 h-10 z" fill="white" opacity="0.8"/>
+    </g>
+</svg>
