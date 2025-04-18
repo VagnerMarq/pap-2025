@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         if ($result && $result->num_rows > 0) {
             $user = $result->fetch_assoc();
 
-            if (password_verify($senha, $user['senha'])) {
+            if ($senha === $user['senha']) {
                 $_SESSION['id_usuario'] = $user['id_usuario'];
                 
                 header('Location: dashboard.php');
@@ -38,3 +38,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
     $conn->close();
 }
+?>
