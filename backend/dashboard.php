@@ -4,7 +4,8 @@ if (!isset($_SESSION['id_usuario']) || !isset($_SESSION['id_empresa'])) {
     header("Location: index.html");
     exit();
 }
-include 'db_connection.php';
+
+include __DIR__ . '/db_connection.php';
 
 // Buscar dados principais
 $id_empresa = $_SESSION['id_empresa'];
