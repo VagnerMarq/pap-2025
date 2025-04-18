@@ -397,43 +397,67 @@
     <?php require_once '../services/header.php' ?>
 
     <aside class="sidebar">
-      <nav>
-        <ul>
-          <li>
-            <a href="home.html">
-              <i class="fas fa-home"></i>
-              <span>Início</span>
-            </a>
-          </li>
-          <li>
-            <div class="menu-section">
-              <h3>GESTÃO DE INVENTÁRIO</h3>
-              <a href="produtos.html">
-                <i class="fas fa-box"></i>
-                <span>Produtos</span>
-              </a>
-              <a href="armazens.html">
-                <i class="fas fa-warehouse"></i>
-                <span>Armazéns</span>
-              </a>
-              <a href="categorias.html">
-                <i class="fas fa-tags"></i>
-                <span>Categorias</span>
-              </a>
-              <a href="fornecedores.html">
-                <i class="fas fa-industry"></i>
-                <span>Fornecedores</span>
-              </a>
-            </div>
-          </li>
-          <li class="active">
-            <a href="relatorios.html">
-              <i class="fas fa-chart-bar"></i>
-              <span>Relatórios</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <div class="sidebar-header">
+        <div class="profile-info">
+          <i class="fas fa-user-circle"></i>
+          <span>Usuário</span>
+        </div>
+        <button class="close-sidebar">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="menu-section">
+        <h3>GESTÃO DE INVENTÁRIO</h3>
+        <a href="produtos.php">
+          <i class="fas fa-box"></i>
+          <span>Produtos</span>
+        </a>
+        <a href="#">
+          <i class="fas fa-tags"></i>
+          <span>Categorias</span>
+        </a>
+        <a href="fornecedores.php">
+          <i class="fas fa-industry"></i>
+          <span>Fornecedores</span>
+        </a>
+      </div>
+
+      <div class="menu-section">
+        <h3>CONTROLE</h3>
+        <a href="movimentacoes.php">
+          <i class="fas fa-exchange-alt"></i>
+          <span>Movimentações</span>
+        </a>
+        <a href="#">
+          <i class="fas fa-boxes"></i>
+          <span>Inventário</span>
+        </a>
+      </div>
+
+      <div class="menu-section">
+        <h3>RELATÓRIOS</h3>
+        <a href="relatorios.php">
+          <i class="fas fa-chart-bar"></i>
+          <span>Relatórios</span>
+        </a>
+      </div>
+
+      <div class="menu-section">
+        <h3>SISTEMA</h3>
+        <a href="#">
+          <i class="fas fa-users"></i>
+          <span>Usuários</span>
+        </a>
+        <a href="#">
+          <i class="fas fa-cog"></i>
+          <span>Configurações</span>
+        </a>
+        <a href="../index.php">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Sair</span>
+        </a>
+      </div>
     </aside>
 
     <main>

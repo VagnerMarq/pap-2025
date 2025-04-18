@@ -42,55 +42,57 @@
         </button>
       </div>
 
-      <nav>
-        <ul>
-          <li>
-            <a href="home.html">
-              <i class="fas fa-home"></i>
-              <span>Início</span>
-            </a>
-          </li>
-          <li>
-            <div class="menu-section">
-              <h3>GESTÃO DE INVENTÁRIO</h3>
-              <a href="produtos.html">
-                <i class="fas fa-box"></i>
-                <span>Produtos</span>
-              </a>
-              <a href="armazens.html">
-                <i class="fas fa-warehouse"></i>
-                <span>Armazéns</span>
-              </a>
-              <a href="categorias.html">
-                <i class="fas fa-tags"></i>
-                <span>Categorias</span>
-              </a>
-              <a href="fornecedores.html" class="active">
-                <i class="fas fa-industry"></i>
-                <span>Fornecedores</span>
-              </a>
-            </div>
-          </li>
-          <li>
-            <a href="movimentacoes.html">
-              <i class="fas fa-exchange-alt"></i>
-              <span>Movimentações</span>
-            </a>
-          </li>
-          <li>
-            <a href="relatorios.html">
-              <i class="fas fa-chart-bar"></i>
-              <span>Relatórios</span>
-            </a>
-          </li>
-          <li>
-            <a href="notificacoes.html">
-              <i class="fas fa-bell"></i>
-              <span>Notificações</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <div class="menu-section">
+        <h3>GESTÃO DE INVENTÁRIO</h3>
+        <a href="produtos.php">
+          <i class="fas fa-box"></i>
+          <span>Produtos</span>
+        </a>
+        <a href="#">
+          <i class="fas fa-tags"></i>
+          <span>Categorias</span>
+        </a>
+        <a href="fornecedores.php">
+          <i class="fas fa-industry"></i>
+          <span>Fornecedores</span>
+        </a>
+      </div>
+
+      <div class="menu-section">
+        <h3>CONTROLE</h3>
+        <a href="movimentacoes.php">
+          <i class="fas fa-exchange-alt"></i>
+          <span>Movimentações</span>
+        </a>
+        <a href="#">
+          <i class="fas fa-boxes"></i>
+          <span>Inventário</span>
+        </a>
+      </div>
+
+      <div class="menu-section">
+        <h3>RELATÓRIOS</h3>
+        <a href="relatorios.php">
+          <i class="fas fa-chart-bar"></i>
+          <span>Relatórios</span>
+        </a>
+      </div>
+
+      <div class="menu-section">
+        <h3>SISTEMA</h3>
+        <a href="#">
+          <i class="fas fa-users"></i>
+          <span>Usuários</span>
+        </a>
+        <a href="#">
+          <i class="fas fa-cog"></i>
+          <span>Configurações</span>
+        </a>
+        <a href="../index.php">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Sair</span>
+        </a>
+      </div>
     </aside>
 
     <main>
@@ -337,17 +339,35 @@
           .classList.add("active");
       }
 
-      function toggleMenu() {
-        document.body.classList.toggle("sidebar-open");
-      }
+      // Controle do menu lateral
+      const toggleMenu = () => {
+        const sidebar = document.querySelector(".sidebar");
+        const main = document.querySelector("main");
+        sidebar.classList.toggle("show");
+        main.classList.toggle("sidebar-open");
+      };
 
-      function showModal(modalId) {
-        document.getElementById(modalId).style.display = "flex";
-      }
+      // Event listeners para menu
+      document
+        .querySelector(".profile-toggle")
+        .addEventListener("click", toggleMenu);
+      document
+        .querySelector(".close-sidebar")
+        .addEventListener("click", toggleMenu);
 
-      function closeModal(modalId) {
-        document.getElementById(modalId).style.display = "none";
-      }
+      // Fechar menu ao clicar fora
+      document.addEventListener("click", (e) => {
+        const sidebar = document.querySelector(".sidebar");
+        const profileToggle = document.querySelector(".profile-toggle");
+
+        if (
+          !sidebar.contains(e.target) &&
+          !profileToggle.contains(e.target) &&
+          sidebar.classList.contains("show")
+        ) {
+          toggleMenu();
+        }
+      });
 
       function abrirModalNovoFornecedor() {
         document.getElementById("modalTitle").textContent = "Novo Fornecedor";

@@ -471,7 +471,7 @@
 
       <div class="menu-section">
         <h3>GESTÃO DE INVENTÁRIO</h3>
-        <a href="medicamentos.html">
+        <a href="produtos.php">
           <i class="fas fa-box"></i>
           <span>Produtos</span>
         </a>
@@ -479,7 +479,7 @@
           <i class="fas fa-tags"></i>
           <span>Categorias</span>
         </a>
-        <a href="#">
+        <a href="fornecedores.php">
           <i class="fas fa-industry"></i>
           <span>Fornecedores</span>
         </a>
@@ -487,7 +487,7 @@
 
       <div class="menu-section">
         <h3>CONTROLE</h3>
-        <a href="movimentacoes.html">
+        <a href="movimentacoes.php">
           <i class="fas fa-exchange-alt"></i>
           <span>Movimentações</span>
         </a>
@@ -499,7 +499,7 @@
 
       <div class="menu-section">
         <h3>RELATÓRIOS</h3>
-        <a href="relatorios.html">
+        <a href="relatorios.php">
           <i class="fas fa-chart-bar"></i>
           <span>Relatórios</span>
         </a>
@@ -515,7 +515,7 @@
           <i class="fas fa-cog"></i>
           <span>Configurações</span>
         </a>
-        <a href="loginn.html">
+        <a href="../index.php">
           <i class="fas fa-sign-out-alt"></i>
           <span>Sair</span>
         </a>
