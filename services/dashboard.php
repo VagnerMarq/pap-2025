@@ -6,9 +6,8 @@
     
     <title>Dashboard - <?php echo htmlspecialchars($empresa['nome']); ?></title>
 
-    <link rel="stylesheet" href="../assets/css/globals.css" />
-    <link rel="stylesheet" href="../assets/css/cards.css" />
-    <link rel="stylesheet" href="../assets/css/charts.css" />
+    <link rel="stylesheet" href="../assets/css/estilo.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
   </head>
   <body>
     <header>
