@@ -1,0 +1,39 @@
+.chart-container {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+}
+
+.chart-filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.chart-filter {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chart-filter.active {
+  background: #0077b6;
+  color: white;
+  border-color: #0077b6;
+}
