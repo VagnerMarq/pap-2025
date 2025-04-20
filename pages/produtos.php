@@ -34,8 +34,10 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="profile-info">
-          <i class="fas fa-user-circle"></i>
-          <span>Usuário</span>
+          <a href="../services/dashboard.php">
+            <i class="fas fa-user-circle"></i>
+            <span>Usuário</span>
+          </a>
         </div>
         <button class="close-sidebar">
           <i class="fas fa-times"></i>

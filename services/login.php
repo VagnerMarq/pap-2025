@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         $result = $stmt->get_result();
 
         // Verifica se encontrou o usuário
-        if ($result && $result->num_rows > 0) {
+        if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
 
             // Verifica a senha usando password_verify
