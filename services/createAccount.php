@@ -1,3 +1,53 @@
+<?php
+session_start();
+require_once 'conexao.php';
+
+// Ativa mensagens de erro
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
+  $name = trim($_POST['name']);
+  $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+  $empresa = trim($_POST['empresa']);
+  $senha = trim($_POST['senha']);
+
+  // Verifica se o email já existe
+  $stmtCheck = $conn->prepare("SELECT id_usuario FROM usuarios WHERE email = ?");
+  $stmtCheck->bind_param("s", $email);
+  $stmtCheck->execute();
+  $stmtCheck->store_result();
+
+  if ($stmtCheck->num_rows > 0) {
+    echo "E-mail já cadastrado!";
+  } else {
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+    $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, empresa, senha) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $name, $email, $empresa, $senhaHash);
+
+    if ($stmt->execute()) {
+      $_SESSION['id_usuario'] = $stmt->insert_id;
+      $_SESSION['nome'] = $name;
+      $_SESSION['email'] = $email;
+      $_SESSION['empresa'] = $empresa;
+      $_SESSION['logado'] = true;
+
+      header("Location: dashboard.php");
+      exit();
+    } else {
+      echo "Erro ao cadastrar: " . $stmt->error;
+    }
+
+    $stmt->close();
+  }
+
+  $stmtCheck->close();
+  $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -17,7 +67,7 @@
         <h2>Bem-vindo ao Sistema de Gestão de Inventário</h2>
 
         <!--<form id="loginForm" onsubmit="return validarLogin(event)" action="login.php" method="POST">-->
-        <form id="loginForm" action="services/login.php" method="POST">
+        <form id="loginForm" action="createAccount.php" method="POST">
           <div class="input-group">
             <i class="fas fa-envelope"></i>
             <input

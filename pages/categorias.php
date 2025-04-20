@@ -34,8 +34,10 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="profile-info">
-          <i class="fas fa-user-circle"></i>
-          <span>Usuário</span>
+          <a href="../services/dashboard.php">
+            <i class="fas fa-user-circle"></i>
+            <span>Usuário</span>
+          </a>
         </div>
         <button class="close-sidebar">
           <i class="fas fa-times"></i>
@@ -235,137 +237,8 @@
         </div>
       </div>
     </main>
-
-    <script>
-      // Dados de exemplo
-      const categorias = [
-        {
-          id: 1,
-          nome: "Eletrônicos",
-          descricao: "Produtos eletrônicos em geral",
-          cor: "#0077b6",
-          icone: "fa-microchip",
-          subCategorias: [
-            {
-              id: 2,
-              nome: "Computadores",
-              descricao: "Computadores e notebooks",
-              cor: "#00b4d8",
-              icone: "fa-laptop",
-            },
-            {
-              id: 3,
-              nome: "Smartphones",
-              descricao: "Telefones celulares",
-              cor: "#90e0ef",
-              icone: "fa-mobile-alt",
-            },
-          ],
-        },
-      ];
-
-      function renderizarArvore(
-        categorias,
-        parentElement = document.getElementById("categoryTree")
-      ) {
-        categorias.forEach((categoria) => {
-          const item = document.createElement("div");
-          item.className = "tree-item";
-          item.innerHTML = `
-                    <div class="tree-item-content" onclick="selecionarCategoria(${
-                      categoria.id
-                    })">
-                        <i class="fas ${categoria.icone}" style="color: ${
-            categoria.cor
-          }"></i>
-                        <span>${categoria.nome}</span>
-                        ${
-                          categoria.subCategorias
-                            ? '<i class="fas fa-chevron-right"></i>'
-                            : ""
-                        }
-                    </div>
-                `;
-
-          if (categoria.subCategorias && categoria.subCategorias.length > 0) {
-            const subItems = document.createElement("div");
-            subItems.className = "tree-subitems";
-            renderizarArvore(categoria.subCategorias, subItems);
-            item.appendChild(subItems);
-          }
-
-          parentElement.appendChild(item);
-        });
-      }
-
-      function selecionarCategoria(id) {
-        // Implementar seleção de categoria
-        console.log("Categoria selecionada:", id);
-      }
-
-      // Controle do menu lateral
-      const toggleMenu = () => {
-        const sidebar = document.querySelector(".sidebar");
-        const main = document.querySelector("main");
-        sidebar.classList.toggle("show");
-        main.classList.toggle("sidebar-open");
-      };
-
-      // Event listeners para menu
-      document
-        .querySelector(".profile-toggle")
-        .addEventListener("click", toggleMenu);
-      document
-        .querySelector(".close-sidebar")
-        .addEventListener("click", toggleMenu);
-
-      // Fechar menu ao clicar fora
-      document.addEventListener("click", (e) => {
-        const sidebar = document.querySelector(".sidebar");
-        const profileToggle = document.querySelector(".profile-toggle");
-
-        if (
-          !sidebar.contains(e.target) &&
-          !profileToggle.contains(e.target) &&
-          sidebar.classList.contains("show")
-        ) {
-          toggleMenu();
-        }
-      });
-
-      function abrirModalNovaCategoria() {
-        document.getElementById("formNovaCategoria").reset();
-        showModal("modalNovaCategoria");
-      }
-
-      function salvarNovaCategoria() {
-        // Implementar salvamento
-        closeModal("modalNovaCategoria");
-      }
-
-      function limparFormulario() {
-        document.getElementById("formCategoria").reset();
-      }
-
-      // Event listeners
-      document
-        .querySelector(".profile-toggle")
-        .addEventListener("click", toggleMenu);
-      document
-        .querySelector(".close-sidebar")
-        .addEventListener("click", toggleMenu);
-
-      document
-        .getElementById("formCategoria")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          // Implementar salvamento do formulário
-        });
-
-      // Inicialização
-      document.addEventListener("DOMContentLoaded", () => {
-        renderizarArvore(categorias);
-      });
-    </script>
+    
+    <script src="../assets/js/sidebar.js"></script>
+    <script src="../assets/js/categorias.js"></script>
   </body>
 </html>

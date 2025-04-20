@@ -34,8 +34,10 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="profile-info">
-          <i class="fas fa-user-circle"></i>
-          <span>Usuário</span>
+          <a href="../services/dashboard.php">
+            <i class="fas fa-user-circle"></i>
+            <span>Usuário</span>
+          </a>
         </div>
         <button class="close-sidebar">
           <i class="fas fa-times"></i>
@@ -316,37 +318,6 @@
         pesquisarProdutos(e.target.value);
       });
 
-      // Controle do menu lateral
-      const toggleMenu = () => {
-        const sidebar = document.querySelector(".sidebar");
-        const main = document.querySelector("main");
-        sidebar.classList.toggle("show");
-        main.classList.toggle("sidebar-open");
-      };
-
-      document
-        .querySelector(".profile-toggle")
-        .addEventListener("click", toggleMenu);
-      document
-        .querySelector(".close-sidebar")
-        .addEventListener("click", toggleMenu);
-
-      // Fechar menu ao clicar fora
-      document.addEventListener("click", (e) => {
-        const sidebar = document.querySelector(".sidebar");
-        const profileToggle = document.querySelector(".profile-toggle");
-        const closeSidebar = document.querySelector(".close-sidebar");
-
-        if (
-          !sidebar.contains(e.target) &&
-          !profileToggle.contains(e.target) &&
-          !closeSidebar.contains(e.target)
-        ) {
-          sidebar.classList.remove("show");
-          document.querySelector("main").classList.remove("sidebar-open");
-        }
-      });
-
       document
         .querySelector(".close-sidebar")
         .addEventListener("click", toggleMenu);
@@ -356,14 +327,6 @@
         renderizarTabela(produtos);
         atualizarContadores(produtos);
       });
-
-      function showModal(modalId) {
-        document.getElementById(modalId).style.display = "flex";
-      }
-
-      function closeModal(modalId) {
-        document.getElementById(modalId).style.display = "none";
-      }
 
       function verDetalhes(id) {
         const produto = produtos.find((p) => p.id === id);
@@ -395,5 +358,6 @@
         showModal("modalNovoProduto");
       }
     </script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

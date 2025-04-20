@@ -1,32 +1,11 @@
-// Controle do menu lateral
-const toggleMenu = () => {
-  const sidebar = document.querySelector(".sidebar");
-  const main = document.querySelector("main");
-  sidebar.classList.toggle("show");
-  main.classList.toggle("sidebar-open");
-};
+// Modal
+function showModal(modalId) {
+  document.getElementById(modalId).style.display = "flex";
+}
 
-// Event listeners para menu
-document
-  .querySelector(".profile-toggle")
-  .addEventListener("click", toggleMenu);
-document
-  .querySelector(".close-sidebar")
-  .addEventListener("click", toggleMenu);
-
-// Fechar menu ao clicar fora
-document.addEventListener("click", (e) => {
-  const sidebar = document.querySelector(".sidebar");
-  const profileToggle = document.querySelector(".profile-toggle");
-
-  if (
-    !sidebar.contains(e.target) &&
-    !profileToggle.contains(e.target) &&
-    sidebar.classList.contains("show")
-  ) {
-    toggleMenu();
-  }
-});
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
 
 // Função para formatar valores em Kwanza
 function formatKwanza(value) {
